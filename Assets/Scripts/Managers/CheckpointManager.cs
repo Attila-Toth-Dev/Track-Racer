@@ -12,7 +12,6 @@ public class CheckpointManager : MonoBehaviour
         [Header("Waypoint Properties")]
         public string name;
         public Vector3 colliderSize;
-        public float colliderRotationValue;
 
         [Header("Waypoint Positioning")]
         public Transform transform;
