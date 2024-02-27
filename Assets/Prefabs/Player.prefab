@@ -199,15 +199,18 @@ MonoBehaviour:
   drag: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 499
+    m_Bits: 243
   FL_Wheel: {fileID: 5570355122594122904}
   FR_Wheel: {fileID: 3287044387400255910}
+  FL_Light: {fileID: 0}
+  FR_Light: {fileID: 0}
   moveAction: {fileID: -7652315520478862766, guid: 1ff44195e3514e143b7d6a4faf81fbd9, type: 3}
   steerAction: {fileID: 4203286702312302125, guid: 1ff44195e3514e143b7d6a4faf81fbd9, type: 3}
   _rayLength: 0.6
   _move: 0
   _steer: 0
   _isGrounded: 0
+  _isDay: 0
 --- !u!1001 &7231418531344382292
 PrefabInstance:
   m_ObjectHideFlags: 0
