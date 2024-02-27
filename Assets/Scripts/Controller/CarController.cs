@@ -4,6 +4,8 @@ using NaughtyAttributes;
 
 public class CarController : MonoBehaviour
 {
+    public float Speed { get; private set; }
+
     public Transform carBody;
     public Transform carNormal;
     public Rigidbody carRB;
@@ -38,7 +40,7 @@ public class CarController : MonoBehaviour
     [SerializeField, ReadOnly]private bool _isGrounded;
     [SerializeField] private bool _isDay;
 
-    private float _speed, _currentSpeed;
+    public float _currentSpeed;
     private float _rotate, _currentRotate;
 
     private Quaternion _normalPosition;
@@ -61,7 +63,7 @@ public class CarController : MonoBehaviour
 
         // Accelerate
         if(_move < 0 || _move > 0)
-            _speed = topSpeed * _move;
+            Speed = topSpeed * _move;
 
         // Steer
         if (_steer != 0)
@@ -73,7 +75,7 @@ public class CarController : MonoBehaviour
         }
         else Steer(0, 0);
 
-        _currentSpeed = Mathf.SmoothStep(_currentSpeed, _speed, Time.deltaTime * accelerationAmount); _speed = 0f;
+        _currentSpeed = Mathf.SmoothStep(_currentSpeed, Speed, Time.deltaTime * accelerationAmount); Speed = 0f;
         _currentRotate = Mathf.Lerp(_currentRotate, _rotate, Time.deltaTime * brakeAmount); _rotate = 0f;
     }
 

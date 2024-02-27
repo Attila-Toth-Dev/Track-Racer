@@ -11,7 +11,16 @@ public class CarCollisionChecking : MonoBehaviour
     private void Awake()
     {
         _cpManager = FindObjectOfType<CheckpointManager>();
+        if (_cpManager != null)
+            Debug.Log(_cpManager.name);
+        else
+            Debug.LogError("CAR COLLISION: CP Manager was NULL");
+
         _rManager = FindObjectOfType<RaceManager>();
+        if (_rManager != null)
+            Debug.Log(_rManager.name);
+        else
+            Debug.LogError("CAR COLLISION: RACE Manager was NULL");
     }
 
     private void OnTriggerEnter(Collider _other)
