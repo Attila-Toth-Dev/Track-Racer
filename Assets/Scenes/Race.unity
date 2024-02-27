@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.4121129, g: 0.42883, b: 0.46226418, a: 1}
+  m_AmbientSkyColor: {r: 0.69803923, g: 0.6666667, b: 0.6039216, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.58944464, g: 0.62019986, b: 0.6981132, a: 1}
+  m_SubtractiveShadowColor: {r: 0.41960785, g: 0.47843137, b: 0.627451, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: e068e6a347aec6d4290aca98b0cf73ef, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 10af403a5a2de214fbb6465d36dfb621, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -137,6 +137,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8935095989379886729, guid: f5d3c5e0f5f32c141911c08deee9e94d, type: 3}
   m_PrefabInstance: {fileID: 412564985514153143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &18681643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3504907610262975553, guid: c61824016f9dd6b4aa24c3b19d337b8d, type: 3}
+  m_PrefabInstance: {fileID: 254417632}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &25827184 stripped
 Transform:
@@ -418,6 +423,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a8abbe2610f65a40b8af807c3626d2e, type: 3}
+--- !u!1 &100500292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7861058161042036175, guid: c61824016f9dd6b4aa24c3b19d337b8d, type: 3}
+  m_PrefabInstance: {fileID: 254417632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &128701547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8935095989379886729, guid: f5d3c5e0f5f32c141911c08deee9e94d, type: 3}
@@ -664,6 +674,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1189457853807582877, guid: c61824016f9dd6b4aa24c3b19d337b8d, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 499
+      objectReference: {fileID: 0}
     - target: {fileID: 3242826630409863517, guid: c61824016f9dd6b4aa24c3b19d337b8d, type: 3}
       propertyPath: m_Icon
       value: 
@@ -732,6 +746,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7747324011250797609, guid: c61824016f9dd6b4aa24c3b19d337b8d, type: 3}
+      propertyPath: car
+      value: 
+      objectReference: {fileID: 100500292}
+    - target: {fileID: 7747324011250797609, guid: c61824016f9dd6b4aa24c3b19d337b8d, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 18681643}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61824016f9dd6b4aa24c3b19d337b8d, type: 3}
 --- !u!4 &255231784 stripped
@@ -1246,6 +1268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!4 &528915660 stripped
@@ -1569,7 +1595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708356935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -46, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1652,6 +1678,10 @@ PrefabInstance:
     - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
@@ -2336,19 +2366,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2356,7 +2386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3215,19 +3245,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000029504295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3235,7 +3265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3620,6 +3650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!4 &1507910250 stripped
@@ -3749,7 +3783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710784
+      value: 0.7071078
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3757,7 +3791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710576
+      value: -0.70710576
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3769,7 +3803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3809,8 +3843,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8679245, g: 0.8011818, b: 0.6263795, a: 1}
-  m_Intensity: 1.07
+  m_Color: {r: 1, g: 0.93333334, b: 0.7882353, a: 1}
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3852,7 +3886,7 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0.9
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -4148,6 +4182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!4 &1642276145 stripped
@@ -4190,9 +4228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1890588548742467344, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
-  savedPlayerTransform:
-    savedPosition: {x: 0, y: 0, z: 0}
-    savedRotation: {x: 0, y: 0, z: 0, w: 0}
+  savedPosition: {x: 0, y: 0, z: 0}
+  savedRotation: {x: 0, y: 0, z: 0, w: 0}
   waypoints:
   - name: CP 1
     colliderSize: {x: 12, y: 6, z: 1}
@@ -4546,6 +4583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1779068566}
+  - component: {fileID: 1779068567}
   m_Layer: 0
   m_Name: Race Manager
   m_TagString: Untagged
@@ -4568,6 +4606,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779068567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779068565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f25dc8c2cf41547a7c17954598b2df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointManager: {fileID: 0}
+  checkpointAmount: 0
+  lapAmount: 2
+  currentCheckpoint: 0
+  currentLap: 0
 --- !u!4 &1787299856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2581800735424805860, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
@@ -4960,7 +5015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.0000029504295
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4968,7 +5023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4980,7 +5035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1258589967228540330, guid: 63f7e3a5ea486a9438b4cd3142c7dc92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5234,6 +5289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_line_type_01_30m_free_obs
       objectReference: {fileID: 0}
+    - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
 --- !u!1001 &412564984972676094
@@ -5290,6 +5349,10 @@ PrefabInstance:
     - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
       propertyPath: m_Name
       value: Track_line_type_01_30m_free_obs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
@@ -6329,6 +6392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!1001 &412564985144387466
@@ -6398,6 +6465,10 @@ PrefabInstance:
     - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_15x15m_quad_free_obs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7848721253946826572, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_RootOrder
@@ -6797,6 +6868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!1001 &412564985240302830
@@ -6865,6 +6940,10 @@ PrefabInstance:
     - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
@@ -7676,6 +7755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!1001 &412564985405657126
@@ -7744,6 +7827,10 @@ PrefabInstance:
     - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
@@ -7929,6 +8016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_15x15m_quad_free_obs (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7848721253946826572, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8086,6 +8177,10 @@ PrefabInstance:
     - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
       propertyPath: m_Name
       value: Track_line_type_01_30m_free_obs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
@@ -8613,6 +8708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_15x15m_quad_free_obs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7848721253946826572, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -8941,6 +9040,10 @@ PrefabInstance:
     - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_30x30m_quad_free_obs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
@@ -9752,6 +9855,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!1001 &412564985659316728
@@ -9980,6 +10087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_30x30m_quad_free_obs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
 --- !u!1001 &412564985685224171
@@ -10048,6 +10159,10 @@ PrefabInstance:
     - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
@@ -10175,6 +10290,10 @@ PrefabInstance:
     - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_15x15m_quad_free_obs (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7848721253946826572, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_RootOrder
@@ -10847,6 +10966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_30x30m_quad_free_obs (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
 --- !u!1001 &412564985874009030
@@ -10915,6 +11038,10 @@ PrefabInstance:
     - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
@@ -11543,6 +11670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_30x30m_quad_free_obs (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
 --- !u!1001 &412564985978115253
@@ -11713,6 +11844,10 @@ PrefabInstance:
     - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_30x30m_quad_free_obs (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
@@ -12797,6 +12932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_line_type_01_30m_free_obs (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
 --- !u!1001 &412564986249131099
@@ -13310,6 +13449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_30x30m_quad_free_obs
       objectReference: {fileID: 0}
+    - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
 --- !u!1001 &412564986319290340
@@ -13550,6 +13693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!1001 &412564986332758859
@@ -13675,6 +13822,10 @@ PrefabInstance:
     - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
@@ -14486,6 +14637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!1001 &412564986491791954
@@ -14884,6 +15039,10 @@ PrefabInstance:
     - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
       propertyPath: m_Name
       value: Track_line_type_01_30m_free_obs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 950377666402935899, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ab59e03c7a63c4dbfb26d2ca862d41, type: 3}
@@ -16310,6 +16469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_line_type_01_start_finish_15m_free_obs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8049907621329533821, guid: 419b5557461398443a4b99d9496015fc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 419b5557461398443a4b99d9496015fc, type: 3}
 --- !u!1001 &412564986882932572
@@ -16892,6 +17055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lawn_plane_15m_free_obs (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5678493142902998330, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ab2401bf6839744952d1947386d8b3, type: 3}
 --- !u!1001 &412564986958875776
@@ -17076,6 +17243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_15x15m_quad_free_obs (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7848721253946826572, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -17246,6 +17417,10 @@ PrefabInstance:
     - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_15x15m_quad_free_obs (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7848721253946826572, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_RootOrder
@@ -17576,6 +17751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_line_type_01_15m_free_obs (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2927259199662858590, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
 --- !u!1001 &412564987074650866
@@ -17690,6 +17869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_30x30m_quad_free_obs (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7599908097705747875, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0f6076afd4dde4f82fd5097f69adc9, type: 3}
 --- !u!1001 &412564987114310849
@@ -17746,6 +17929,10 @@ PrefabInstance:
     - target: {fileID: 2927259199662858590, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
       propertyPath: m_Name
       value: Track_line_type_01_15m_free_obs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927259199662858590, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
@@ -17835,6 +18022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_line_type_01_15m_free_obs
       objectReference: {fileID: 0}
+    - target: {fileID: 2927259199662858590, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1060f28bab45ab94eb490830df68466e, type: 3}
 --- !u!1001 &2954968439580330877
@@ -17916,6 +18107,10 @@ PrefabInstance:
     - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_Name
       value: Track_Corner_90d_type_01_15x15m_quad_free_obs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469099903034017270, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7848721253946826572, guid: e5ade76ec6dcf6140937231635f92c06, type: 3}
       propertyPath: m_RootOrder

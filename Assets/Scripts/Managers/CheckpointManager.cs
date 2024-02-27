@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 using NaughtyAttributes;
 
@@ -17,18 +16,12 @@ public class CheckpointManager : MonoBehaviour
         public Transform transform;
     }
 
-    [Serializable]
-    public struct SavedPlayerTransform
-    {
-        public Vector3 savedPosition;
-        public Quaternion savedRotation;
-    }
-
     [Header("Waypoint Manager Settings")]
     [SerializeField] private GameObject prefab;
 
     [Header("Current Saved Position")]
-    [NaughtyAttributes.ReadOnly] public SavedPlayerTransform savedPlayerTransform;
+    [ReadOnly] public Vector3 savedPosition;
+    [ReadOnly] public Quaternion savedRotation;
 
     [Header("")] public List<Waypoint> waypoints = new List<Waypoint>();
 
@@ -39,6 +32,9 @@ public class CheckpointManager : MonoBehaviour
 
     private void Start()
     {
+        savedPosition = new Vector3(0, 1, 0);
+        savedRotation = new Quaternion(0, 0, 0, 0);
+
         foreach (Waypoint waypoint in waypoints)
         {
             _gameObject = Instantiate(prefab, waypoint.transform.position, waypoint.transform.rotation, transform);
@@ -54,9 +50,6 @@ public class CheckpointManager : MonoBehaviour
 
             _waypointGO.Add(_gameObject);
         }
-
-        savedPlayerTransform.savedPosition = new Vector3(0, 1, 2.7f);
-        savedPlayerTransform.savedRotation = new Quaternion(0, 180, 0, 0);
     }
 
     private void OnDrawGizmos()

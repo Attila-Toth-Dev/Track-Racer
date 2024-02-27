@@ -2,39 +2,41 @@ using UnityEngine;
 
 public class CarCollisionChecking : MonoBehaviour
 {
-    private CarController car;
+    [SerializeField] private GameObject car;
+    [SerializeField] private new GameObject collider;
 
-    private CheckpointManager cpManager;
-    private RaceManager rManager;
+    private CheckpointManager _cpManager;
+    private RaceManager _rManager;
 
     private void Awake()
     {
-        car = FindObjectOfType<CarController>();
-
-        cpManager = FindObjectOfType<CheckpointManager>();
-        rManager = FindObjectOfType<RaceManager>();
+        _cpManager = FindObjectOfType<CheckpointManager>();
+        _rManager = FindObjectOfType<RaceManager>();
     }
 
     private void OnTriggerEnter(Collider _other)
     {
-        if (_other.CompareTag("Waypoint") && cpManager != null)
+        if (_other.CompareTag("Waypoint") && _cpManager != null)
         {
-            Debug.Log("HIT");
+            _cpManager.savedPosition = _other.transform.position;
+            _cpManager.savedRotation = _other.transform.localRotation;
 
-            cpManager.savedPlayerTransform.savedPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1, transform.localPosition.z);
-            cpManager.savedPlayerTransform.savedRotation = transform.localRotation;
+            _rManager.currentCheckpoint++;
         }
 
         if (_other.CompareTag("Reset Zone"))
         {
-            Debug.Log("Hit");
+            Vector3 savedPos = new Vector3(_cpManager.savedPosition.x, _cpManager.savedPosition.y + 1f, _cpManager.savedPosition.z);
 
-            car.transform.position = new Vector3(cpManager.savedPlayerTransform.savedPosition.x, cpManager.savedPlayerTransform.savedPosition.y + 5f, cpManager.savedPlayerTransform.savedPosition.z);
-            car.transform.localRotation = cpManager.savedPlayerTransform.savedRotation;
+            car.transform.position = savedPos;
+            collider.transform.position = savedPos;
+
+            car.transform.rotation = _cpManager.savedRotation;
+            collider.transform.rotation = _cpManager.savedRotation;
         }
 
         HumanController hc = _other.gameObject.GetComponent<HumanController>();
-        if(hc != null)
+        if (hc != null)
         {
             CapsuleCollider cc = hc.gameObject.GetComponent<CapsuleCollider>();
 

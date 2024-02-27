@@ -34,7 +34,6 @@ public class CarController : MonoBehaviour
     [SerializeField, ReadOnly] private float _steer;
     [SerializeField, ReadOnly]private bool _isGrounded;
 
-    
     private float _speed, _currentSpeed;
     private float _rotate, _currentRotate;
 
@@ -118,9 +117,15 @@ public class CarController : MonoBehaviour
 
     private void Move()
     {
-        // Forward Acceleration
-        carRB.AddForce(_isGrounded ? carBody.transform.forward * (_currentSpeed) : carBody.transform.forward * (_currentSpeed / 2), ForceMode.Acceleration);
+        LayerMask onTrack = LayerMask.GetMask("On-Track");
+        LayerMask offTrack = LayerMask.GetMask("Off-Track");
 
+        // Forward Acceleration
+        if(Physics.Raycast(transform.position + (transform.up * 0.1f), Vector3.down, out RaycastHit hitGround, _rayLength, onTrack))
+            carRB.AddForce(_isGrounded ? carBody.transform.forward * (_currentSpeed) : carBody.transform.forward * (_currentSpeed / 2), ForceMode.Acceleration);
+        else
+            carRB.AddForce(_isGrounded ? carBody.transform.forward * (_currentSpeed / 2) : carBody.transform.forward * (_currentSpeed / 2), ForceMode.Acceleration);
+        
         // Gravity & Drag
         carRB.AddForce(_isGrounded ? Vector3.down * gravity : Vector3.down * (gravity * inAirGravity), ForceMode.Acceleration);
         carRB.drag = drag;

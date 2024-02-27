@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f3a500a48c944448cad6df740c53a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  car: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!1 &6694144325962767869
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ MonoBehaviour:
   carNormal: {fileID: 9138920644699564456}
   carRB: {fileID: 6516681499352385359}
   topSpeed: 150
-  accelerationAmount: 5
+  accelerationAmount: 6
   brakeAmount: 7
   steering: 30
   gravity: 10
@@ -197,7 +199,7 @@ MonoBehaviour:
   drag: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 435
+    m_Bits: 499
   FL_Wheel: {fileID: 5570355122594122904}
   FR_Wheel: {fileID: 3287044387400255910}
   moveAction: {fileID: -7652315520478862766, guid: 1ff44195e3514e143b7d6a4faf81fbd9, type: 3}
