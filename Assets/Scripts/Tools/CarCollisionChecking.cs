@@ -26,7 +26,7 @@ public class CarCollisionChecking : MonoBehaviour
 
         if (_other.CompareTag("Reset Zone"))
         {
-            Vector3 savedPos = new Vector3(_cpManager.savedPosition.x, _cpManager.savedPosition.y + 1f, _cpManager.savedPosition.z);
+            Vector3 savedPos = new Vector3(_cpManager.savedPosition.x + 1f, _cpManager.savedPosition.y + 1f, _cpManager.savedPosition.z);
 
             car.transform.position = savedPos;
             collider.transform.position = savedPos;
