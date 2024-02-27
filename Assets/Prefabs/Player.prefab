@@ -195,7 +195,7 @@ MonoBehaviour:
   topSpeed: 150
   accelerationAmount: 5
   brakeAmount: 7
-  steering: 20
+  steering: 15
   gravity: 8
   inAirGravity: 6
   drag: 5
@@ -213,6 +213,7 @@ MonoBehaviour:
   _steer: 0
   _isGrounded: 0
   _isDay: 0
+  _currentSpeed: 0
 --- !u!65 &3484190112008098246
 BoxCollider:
   m_ObjectHideFlags: 0

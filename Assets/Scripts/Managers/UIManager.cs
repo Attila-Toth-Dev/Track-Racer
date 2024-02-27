@@ -1,6 +1,11 @@
+using NaughtyAttributes;
+
+using System;
+
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -12,45 +17,78 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI laps;
 
     [Header("UI Objects")]
-    [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject winMenu;
+
+    [Header("UI Controls")]
+    [SerializeField] private InputActionReference pauseAction;
+    [SerializeField, ReadOnly] private bool _isPaused;
 
     private GameSceneManager _gsManager;
     private RaceManager _rManager;
 
-    void Start()
+    private void Start()
     {
+        Time.timeScale = 1;
+        
         _rManager = FindObjectOfType<RaceManager>();
-        _gsManager = FindObjectOfType<GameSceneManager>();
-
-        if (_rManager != null)
-            Debug.Log(_rManager.name);
-        else
+        if (_rManager == null)
             Debug.LogError("UI MANAGER: RACE manager was NULL");
 
-        if (_gsManager != null)
-            Debug.Log(_gsManager.name);
-        else
+        _gsManager = FindObjectOfType<GameSceneManager>();
+        if (_gsManager == null)
             Debug.LogError("UI MANAGER: GS Manager was NULL");
     }
 
-    public void ResumeGame()
+    public void TogglePause()
     {
-        gameObject.SetActive(true);
+        _isPaused = !_isPaused;
+
+        if(_isPaused)
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
+        }
+    }
+
+    public void Win()
+    {
+        Time.timeScale = 0;
+        winMenu.SetActive(true);
     }
 
     public void RestartGame()
     {
-        _gsManager.RestartScene(SceneManager.GetActiveScene().name);
+        UnloadUI();
+        _gsManager.RestartScene();
     }
 
-    public void QuitGame()
-    {
+    public void QuitGame() => _gsManager.QuitGame();
 
-    }
-
-    void Update()
+    private void Update()
     {
         speed.text = $"Speed: {(int)car._currentSpeed}";
         laps.text = $"Laps {_rManager.currentLap}/{_rManager.LapAmount}";
+        
+        if(pauseAction.action.triggered)
+            TogglePause();
     }
+
+    private void UnloadUI()
+    {
+        pauseMenu.SetActive(false);
+        winMenu.SetActive(false);
+
+        _isPaused = false;
+        Time.timeScale = 1;
+    }
+
+    private void OnEnable() => pauseAction.action.Enable();
+
+    private void OnDisable() => pauseAction.action.Disable();
 }

@@ -8,30 +8,24 @@ public class GameSceneManager : MonoBehaviour
 {
     private RaceManager _rManager;
 
-    [SerializeField, ReadOnly] private bool _isPaused;
-
-    void Start()
+    private void Start()
     {
         _rManager = FindObjectOfType<RaceManager>();
-        if (_rManager != null)
-            Debug.Log(_rManager.name);
-        else
+        if (_rManager == null)
             Debug.LogError("GM MANAGER: RACE Manager was NULL");
     }
 
-    public void RestartScene(string _sceneName)
+    public void RestartScene()
     {
-        Scene current = SceneManager.GetActiveScene();
-
-        SceneManager.UnloadSceneAsync(current);
-        SceneManager.LoadSceneAsync(_sceneName);
+        Time.timeScale = 1;
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ChangeScene(string _sceneName)
     {
-        Scene current = SceneManager.GetActiveScene();
-
-        SceneManager.UnloadSceneAsync(current);
+        Time.timeScale = 1;
         SceneManager.LoadSceneAsync(_sceneName);
     }
+
+    public void QuitGame() => Application.Quit();
 }

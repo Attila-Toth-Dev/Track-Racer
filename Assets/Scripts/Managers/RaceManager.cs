@@ -4,7 +4,6 @@ using UnityEngine;
 public class RaceManager : MonoBehaviour
 {
     public float LapAmount { get; private set; }
-    [SerializeField, ReadOnly] private CheckpointManager _cpManager;
 
     [Header("Race Manager Settings")]
     [SerializeField] private float lapAmount;
@@ -12,13 +11,18 @@ public class RaceManager : MonoBehaviour
     [ReadOnly] public float currentCheckpoint;
     [ReadOnly] public float currentLap;
 
+    private CheckpointManager _cpManager;
+    private UIManager _uiManager;
+    
     private void Start()
     {
         _cpManager = FindObjectOfType<CheckpointManager>();
-        if (_cpManager != null)
-            Debug.Log(_cpManager.name);
-        else
+        if (_cpManager == null)
             Debug.LogError("RACE MANAGER: CP Manager was NULL");
+
+        _uiManager = FindObjectOfType<UIManager>();
+        if(_uiManager == null)
+            Debug.LogError("RACE MANAGER: UI Manager was NULL");
 
         checkpointAmount = _cpManager.waypoints.Count;
 
@@ -30,13 +34,15 @@ public class RaceManager : MonoBehaviour
 
     private void Update()
     {
+        // Lap Counting
         if (currentCheckpoint > checkpointAmount)
         {
             currentCheckpoint = 1;
             currentLap++;
         }
 
-        if (currentLap > LapAmount)
-            Debug.Log("YOU WIN");
+        // Toggle Win State
+        if(currentLap > LapAmount)
+            _uiManager.Win();
     }
 }
