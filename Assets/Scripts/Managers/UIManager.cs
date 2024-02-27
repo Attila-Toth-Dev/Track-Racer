@@ -30,9 +30,9 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
-        
+
         _rManager = FindObjectOfType<RaceManager>();
-        if (_rManager == null)
+        if(_rManager == null)
             Debug.LogError("UI MANAGER: RACE manager was NULL");
 
         _gsManager = FindObjectOfType<GameSceneManager>();
@@ -69,6 +69,8 @@ public class UIManager : MonoBehaviour
     }
 
     public void QuitGame() => _gsManager.QuitGame();
+
+    public void ChangeScene(string _sceneName) => _gsManager.ChangeScene(_sceneName);
 
     private void Update()
     {
