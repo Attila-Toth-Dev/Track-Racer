@@ -127,14 +127,14 @@ public class CarController : MonoBehaviour
 
     private void Move()
     {
-        LayerMask onTrack = LayerMask.GetMask("On-Track");
-        LayerMask offTrack = LayerMask.GetMask("Off-Track");
+        LayerMask onTrack = LayerMask.GetMask("On Track");
+        LayerMask offTrack = LayerMask.GetMask("Off Track");
 
         // Forward Acceleration
         if(Physics.Raycast(transform.position + (transform.up * 0.1f), Vector3.down, out RaycastHit hitGround, _rayLength, onTrack))
-            carRB.AddForce(_isGrounded ? carBody.transform.forward * (_currentSpeed) : carBody.transform.forward * (_currentSpeed / 2), ForceMode.Acceleration);
+            carRB.AddForce(_isGrounded ? carBody.transform.forward * (_currentSpeed) : carBody.transform.forward * (_currentSpeed * 0.2f), ForceMode.Acceleration);
         else
-            carRB.AddForce(_isGrounded ? carBody.transform.forward * (_currentSpeed / 2) : carBody.transform.forward * (_currentSpeed / 2), ForceMode.Acceleration);
+            carRB.AddForce(_isGrounded ? carBody.transform.forward * (_currentSpeed * 0.5f) : carBody.transform.forward * (_currentSpeed * 0.5f), ForceMode.Acceleration);
         
         // Gravity & Drag
         carRB.AddForce(_isGrounded ? Vector3.down * gravity : Vector3.down * (gravity * inAirGravity), ForceMode.Acceleration);
