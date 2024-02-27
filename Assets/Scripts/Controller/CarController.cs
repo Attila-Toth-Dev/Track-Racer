@@ -24,6 +24,9 @@ public class CarController : MonoBehaviour
     public Transform FL_Wheel;
     public Transform FR_Wheel;
 
+    public Light FL_Light;
+    public Light FR_Light;
+
     [Header("Input Actions")]
     public InputActionReference moveAction;
     public InputActionReference steerAction;
@@ -33,13 +36,20 @@ public class CarController : MonoBehaviour
     [SerializeField, ReadOnly] private float _move;
     [SerializeField, ReadOnly] private float _steer;
     [SerializeField, ReadOnly]private bool _isGrounded;
+    [SerializeField] private bool _isDay;
 
     private float _speed, _currentSpeed;
     private float _rotate, _currentRotate;
 
     private Quaternion _normalPosition;
 
-    private void Start() => _normalPosition = new Quaternion(carNormal.rotation.x, carNormal.rotation.y, carNormal.rotation.z, 0);
+    private void Start()
+    {
+        FL_Light.gameObject.SetActive(_isDay ? false : true);
+        FR_Light.gameObject.SetActive(_isDay ? false : true);
+
+        _normalPosition = new Quaternion(carNormal.rotation.x, carNormal.rotation.y, carNormal.rotation.z, 0);
+    }
 
     private void Update()
     {
