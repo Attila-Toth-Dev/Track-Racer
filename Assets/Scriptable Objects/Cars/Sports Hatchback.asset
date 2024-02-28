@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171b2be80367b64a9a675ef6803582c, type: 3}
+  m_Name: Sports Hatchback
+  m_EditorClassIdentifier: 
+  carName: Sports Hatchback
+  carDescription: Wait... Was that a laptop in the front seat!!!
+  speed: 1
+  acceleration: 1
+  handling: 1
+  carModel: {fileID: 2011798153915752031, guid: c9ed3cac665f80a45b47f27a856e5731, type: 3}
