@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2283986800230691451}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 874954428061339988}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,8 +79,8 @@ GameObject:
   - component: {fileID: 6124301857091292620}
   - component: {fileID: 3958587036374384926}
   - component: {fileID: 5611676409523744084}
-  m_Layer: 0
-  m_Name: Wheel_BR
+  m_Layer: 2
+  m_Name: BR_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,8 +164,8 @@ GameObject:
   - component: {fileID: 2960774462174492108}
   - component: {fileID: 1409035245811957342}
   - component: {fileID: 7105775423252000044}
-  m_Layer: 0
-  m_Name: Wheel_FL
+  m_Layer: 2
+  m_Name: FL_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,8 +249,8 @@ GameObject:
   - component: {fileID: 5316153715120042226}
   - component: {fileID: 4981552670927610551}
   - component: {fileID: 6833222079733158592}
-  m_Layer: 0
-  m_Name: Wheel_FR
+  m_Layer: 2
+  m_Name: FR_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,9 +332,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5692476861542120665}
-  m_Layer: 0
-  m_Name: Sedan_Sock
-  m_TagString: Untagged
+  m_Layer: 2
+  m_Name: Sedan
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579046673029848157}
   - component: {fileID: 4603881025934777907}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FR_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,8 +462,8 @@ GameObject:
   - component: {fileID: 1390788879952829994}
   - component: {fileID: 4757168654216327505}
   - component: {fileID: 2031374661165678494}
-  m_Layer: 0
-  m_Name: Wheel_BL
+  m_Layer: 2
+  m_Name: BL_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,7 +546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5870007452253738519}
   - component: {fileID: 489557219301096791}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FL_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 7484159729019321869}
   - component: {fileID: 8266209014221072084}
   - component: {fileID: 4337369161057673614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
