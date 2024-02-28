@@ -202,10 +202,10 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 243
-  FL_Wheel: {fileID: 0}
-  FR_Wheel: {fileID: 0}
-  FL_Light: {fileID: 0}
-  FR_Light: {fileID: 0}
+  FL_Wheel: {fileID: 5570355122594122904}
+  FR_Wheel: {fileID: 3287044387400255910}
+  FL_Light: {fileID: 7102292496341664771}
+  FR_Light: {fileID: 6611123388166809447}
   moveAction: {fileID: -7652315520478862766, guid: 1ff44195e3514e143b7d6a4faf81fbd9, type: 3}
   steerAction: {fileID: 4203286702312302125, guid: 1ff44195e3514e143b7d6a4faf81fbd9, type: 3}
   _rayLength: 0.6
@@ -344,5 +344,25 @@ PrefabInstance:
 --- !u!4 &3072745070402487693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5692476861542120665, guid: 2044d3618df3f78449be3acdc409a1b2, type: 3}
+  m_PrefabInstance: {fileID: 7231418531344382292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3287044387400255910 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5316153715120042226, guid: 2044d3618df3f78449be3acdc409a1b2, type: 3}
+  m_PrefabInstance: {fileID: 7231418531344382292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5570355122594122904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2960774462174492108, guid: 2044d3618df3f78449be3acdc409a1b2, type: 3}
+  m_PrefabInstance: {fileID: 7231418531344382292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &6611123388166809447 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4603881025934777907, guid: 2044d3618df3f78449be3acdc409a1b2, type: 3}
+  m_PrefabInstance: {fileID: 7231418531344382292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &7102292496341664771 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 489557219301096791, guid: 2044d3618df3f78449be3acdc409a1b2, type: 3}
   m_PrefabInstance: {fileID: 7231418531344382292}
   m_PrefabAsset: {fileID: 0}
