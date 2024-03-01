@@ -6,9 +6,8 @@ namespace Tools.Cars
 {
 	public class CarShowroomRotate : MonoBehaviour
 	{
-		private void FixedUpdate()
-		{
-			transform.Rotate(0, .5f, 0);
-		}
+		[SerializeField] private float rotationAmount = 0.5f;
+		
+		private void FixedUpdate() => transform.Rotate(0, rotationAmount, 0);
 	}
 }

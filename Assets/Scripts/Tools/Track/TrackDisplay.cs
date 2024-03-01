@@ -37,6 +37,6 @@ public class TrackDisplay : MonoBehaviour
         PlayerPrefs.SetString("Track", _track.sceneToLoad.name);
         
         playButton.onClick.RemoveAllListeners();
-        playButton.onClick.AddListener(()=>SceneManager.LoadScene(PlayerPrefs.GetString("Track")));
+        playButton.onClick.AddListener(()=>SceneManager.LoadScene("Car Menu"));
     }
 }

@@ -2,8 +2,23 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 
+using System;
+using System.Collections.Generic;
+
 public class CarController : MonoBehaviour
 {
+    [Serializable]
+    public struct CarModel
+    {
+        public GameObject carModel;
+        
+        public Transform carFL_Wheel;
+        public Transform carFR_Wheel;
+
+        public Light carFL_Light;
+        public Light carFR_Light;
+    }
+    
     public float Speed { get; private set; }
 
     public Transform carBody;
@@ -22,12 +37,16 @@ public class CarController : MonoBehaviour
     public float drag = 10f;
     public LayerMask layerMask;
 
+    [Header("Car Models")]
+    [SerializeField] private List<GameObject> carModels;
+    //[SerializeField] private List<Car> carModels;
+    
     [Header("Model Parts")]
-    public Transform FL_Wheel;
-    public Transform FR_Wheel;
-
-    public Light FL_Light;
-    public Light FR_Light;
+    //public Transform FL_Wheel;
+    //public Transform FR_Wheel;
+    //
+    //public Light FL_Light;
+    //public Light FR_Light;
 
     [Header("Input Actions")]
     public InputActionReference moveAction;
@@ -47,8 +66,18 @@ public class CarController : MonoBehaviour
 
     private void Start()
     {
-        FL_Light.gameObject.SetActive(_isDay ? false : true);
-        FR_Light.gameObject.SetActive(_isDay ? false : true);
+        int carIndex = PlayerPrefs.GetInt("Car");
+        for(int i = 0; i < carNormal.childCount; i++)
+        {
+            if(i == carIndex)
+            {
+                carNormal.GetChild(i).gameObject.SetActive(true);
+                carBody = carNormal.GetChild(i);
+            }
+        }
+        
+        //FL_Light.gameObject.SetActive(!_isDay);
+        //FR_Light.gameObject.SetActive(!_isDay);
 
         _normalPosition = new Quaternion(carNormal.rotation.x, carNormal.rotation.y, carNormal.rotation.z, 0);
     }
@@ -106,7 +135,7 @@ public class CarController : MonoBehaviour
     {
         _rotate = (steering * _direction) * _amount;
 
-        // Wheel Turning Animations
+        /*// Wheel Turning Animations
         switch (_direction)
         {
             case -1:
@@ -123,7 +152,7 @@ public class CarController : MonoBehaviour
                 FL_Wheel.localEulerAngles = new Vector3(-180, steering * 0, 0);
                 FR_Wheel.localEulerAngles = new Vector3(0, steering * 0, 0);
                 break;
-        }
+        }*/
 
     }
 

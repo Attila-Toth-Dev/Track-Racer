@@ -1,6 +1,8 @@
+using System;
+
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Car", menuName = "Scriptable Objects/Car")]
+[CreateAssetMenu(fileName = "New Car", menuName = "Scriptable Objects/Car"), Serializable]
 public class Car : ScriptableObject
 {
     [Header("Description")]
@@ -14,5 +16,6 @@ public class Car : ScriptableObject
     public float handling;
 
     [Header("3D Model")] 
+    public int carIndex;
     public GameObject carModel;
 }
