@@ -33,11 +33,11 @@ public class UIManager : MonoBehaviour
 
         _rManager = FindObjectOfType<RaceManager>();
         if(_rManager == null)
-            Debug.LogError("UI MANAGER: RACE manager was NULL");
+            Debug.LogWarning("UI MANAGER: RACE manager was NULL");
 
         _gsManager = FindObjectOfType<GameSceneManager>();
         if (_gsManager == null)
-            Debug.LogError("UI MANAGER: GS Manager was NULL");
+            Debug.LogWarning("UI MANAGER: GS Manager was NULL");
     }
 
     public void TogglePause()

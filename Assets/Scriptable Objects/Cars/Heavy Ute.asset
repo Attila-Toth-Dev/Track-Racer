@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: Heavy Ute
   carDescription: Did someone say strong bed!
-  speed: 1
-  acceleration: 1
-  handling: 1
+  speed: 100
+  acceleration: 4
+  handling: 20
+  carIndex: 0
   carModel: {fileID: 5511315417414314575, guid: 80b96f4d5f80b754092735ddbfdbbfda, type: 3}

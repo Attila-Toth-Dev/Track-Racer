@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6171b2be80367b64a9a675ef6803582c, type: 3}
   m_Name: Tractor
   m_EditorClassIdentifier: 
-  carName: Tractor
+  carName: Tractor (Special)
   carDescription: Wait, why is this on race track?!!
-  speed: 1
-  acceleration: 1
-  handling: 1
+  speed: 170
+  acceleration: 5
+  handling: 30
+  carIndex: 0
   carModel: {fileID: 3100390579578487087, guid: d16f7a40aa86eb04c8e171f3d9dd3eab, type: 3}

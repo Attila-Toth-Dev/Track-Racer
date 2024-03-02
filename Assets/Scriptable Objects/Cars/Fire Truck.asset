@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: Fire Truck
   carDescription: Why's it racing, it should be saving cats!
-  speed: 1
-  acceleration: 1
-  handling: 1
+  speed: 110
+  acceleration: 4
+  handling: 20
+  carIndex: 0
   carModel: {fileID: 5829873484091434563, guid: 0f799ee534c97d84eab1d5b5ffd0c1d3, type: 3}

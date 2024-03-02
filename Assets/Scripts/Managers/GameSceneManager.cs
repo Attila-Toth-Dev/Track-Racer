@@ -1,6 +1,3 @@
-using NaughtyAttributes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +9,7 @@ public class GameSceneManager : MonoBehaviour
     {
         _rManager = FindObjectOfType<RaceManager>();
         if (_rManager == null)
-            Debug.LogError("GM MANAGER: RACE Manager was NULL");
+            Debug.LogWarning("GM MANAGER: RACE Manager was NULL");
     }
 
     public void RestartScene()

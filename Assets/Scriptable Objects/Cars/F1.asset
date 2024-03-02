@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: F1
   carDescription: Legend says that this is powered by a v12
-  speed: 1
-  acceleration: 1
-  handling: 1
+  speed: 200
+  acceleration: 7
+  handling: 35
+  carIndex: 0
   carModel: {fileID: 4957579473506433247, guid: 2e5719020eb5c074ebf114ba3b28e113, type: 3}

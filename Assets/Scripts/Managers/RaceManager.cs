@@ -18,11 +18,11 @@ public class RaceManager : MonoBehaviour
     {
         _cpManager = FindObjectOfType<CheckpointManager>();
         if (_cpManager == null)
-            Debug.LogError("RACE MANAGER: CP Manager was NULL");
+            Debug.LogWarning("RACE MANAGER: CP Manager was NULL");
 
         _uiManager = FindObjectOfType<UIManager>();
         if(_uiManager == null)
-            Debug.LogError("RACE MANAGER: UI Manager was NULL");
+            Debug.LogWarning("RACE MANAGER: UI Manager was NULL");
 
         checkpointAmount = _cpManager.waypoints.Count;
 

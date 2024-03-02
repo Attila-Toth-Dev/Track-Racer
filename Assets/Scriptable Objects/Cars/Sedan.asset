@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: Sedan
   carDescription: Your standard grocery getter.
-  speed: 1
-  acceleration: 1
-  handling: 1
+  speed: 90
+  acceleration: 4
+  handling: 25
+  carIndex: 0
   carModel: {fileID: 5022759499550254691, guid: 2044d3618df3f78449be3acdc409a1b2, type: 3}

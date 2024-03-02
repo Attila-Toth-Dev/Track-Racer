@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carName: Flatbed Delivery Truck
   carDescription: Can't race for it's life but can carry a town.
-  speed: 1
-  acceleration: 1
-  handling: 1
+  speed: 100
+  acceleration: 4
+  handling: 20
+  carIndex: 0
   carModel: {fileID: 8513158509745883041, guid: a18414ce539243543864b88dab1c0c71, type: 3}

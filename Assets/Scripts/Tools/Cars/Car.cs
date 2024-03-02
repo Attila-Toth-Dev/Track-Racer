@@ -10,7 +10,6 @@ public class Car : ScriptableObject
     public string carDescription;
 
     [Header("Stats")]
-    //public int carPrice;
     public float speed;
     public float acceleration;
     public float handling;

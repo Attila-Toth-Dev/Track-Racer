@@ -26,10 +26,10 @@ public class CarController : MonoBehaviour
     public Rigidbody carRB;
 
     [Header("Car Properties")]
-    public float topSpeed = 30f;
-    public float accelerationAmount = 4f;
-    public float brakeAmount = 4f;
-    public float steering = 80f;
+    [ReadOnly] public float topSpeed = 30f;
+    [ReadOnly] public float accelerationAmount = 4f;
+    [ReadOnly] public float brakeAmount = 4f;
+    [ReadOnly] public float steering = 80f;
 
     [Header("Physics Properties")]
     public float gravity = 10f;
@@ -75,6 +75,10 @@ public class CarController : MonoBehaviour
                 carBody = carNormal.GetChild(i);
             }
         }
+
+        topSpeed = PlayerPrefs.GetFloat("Speed");
+        accelerationAmount = PlayerPrefs.GetFloat("Acceleration");
+        steering = PlayerPrefs.GetFloat("Handling");
         
         //FL_Light.gameObject.SetActive(!_isDay);
         //FR_Light.gameObject.SetActive(!_isDay);
