@@ -51,9 +51,9 @@ public class CarSelection : MonoBehaviour
 			
 		carDesc.text = cars[currentCar].carDescription;
 
-		carSpeed.text = $"{cars[currentCar].speed.ToString()} KM/PH";
-		carAccel.text = cars[currentCar].acceleration.ToString();
-		carHandling.text = cars[currentCar].handling.ToString();
+		carSpeed.text = $"- {cars[currentCar].speed.ToString()} KM/PH";
+		carAccel.text = $"- {cars[currentCar].acceleration.ToString()}";
+		carHandling.text = $"- {cars[currentCar].acceleration.ToString()}";
 		
 		for(int i = 0; i < transform.childCount; i++)
 			transform.GetChild(i).gameObject.SetActive(i == _index);
