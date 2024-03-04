@@ -18,24 +18,29 @@ public class UIManager : MonoBehaviour
 
     [Header("UI Controls")]
     [SerializeField] private InputActionReference pauseAction;
-    [SerializeField, ReadOnly] private bool _isPaused;
+    [SerializeField, ReadOnly] private bool isPaused;
 
-    private GameSceneManager _gsManager;
+    private GameSceneManager gsManager;
+    private TrackManager trackManager;
 
     private void Start()
     {
         Time.timeScale = 1;
         
-        _gsManager = FindObjectOfType<GameSceneManager>();
-        if (_gsManager == null)
+        gsManager = FindObjectOfType<GameSceneManager>();
+        if (gsManager == null)
             Debug.LogWarning("UI MANAGER: GS Manager was NULL");
+
+        trackManager = FindObjectOfType<TrackManager>();
+        if (trackManager == null)
+            Debug.LogWarning("UI MANAGER: Track Manager was NULL");
     }
 
     public void TogglePause()
     {
-        _isPaused = !_isPaused;
+        isPaused = !isPaused;
 
-        if(_isPaused)
+        if(isPaused)
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
@@ -56,15 +61,19 @@ public class UIManager : MonoBehaviour
     public void RestartGame()
     {
         UnloadUI();
-        _gsManager.RestartScene();
+        gsManager.RestartScene();
     }
 
-    public void QuitGame() => _gsManager.QuitGame();
+    public void QuitGame() => gsManager.QuitGame();
 
-    public void ChangeScene(string _sceneName) => _gsManager.ChangeScene(_sceneName);
+    public void ChangeScene(string _sceneName) => gsManager.ChangeScene(_sceneName);
 
     private void Update()
     {
+        checkpoints.text = $"Checkpoints: {trackManager.nextCheckpointIndex}/{trackManager.checkpointList.Count}";
+        speed.text = $"Speed: {(int)car._currentSpeed}";
+        laps.text = $"Laps: {trackManager.currentLap}/{trackManager.lapAmount}";
+        
         if(pauseAction.action.triggered)
         {
             TogglePause();
@@ -76,7 +85,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         winMenu.SetActive(false);
 
-        _isPaused = false;
+        isPaused = false;
         Time.timeScale = 1;
     }
 
