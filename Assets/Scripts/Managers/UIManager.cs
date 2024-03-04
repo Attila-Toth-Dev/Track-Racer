@@ -21,16 +21,11 @@ public class UIManager : MonoBehaviour
     [SerializeField, ReadOnly] private bool _isPaused;
 
     private GameSceneManager _gsManager;
-    private RaceManager _rManager;
 
     private void Start()
     {
         Time.timeScale = 1;
-
-        _rManager = FindObjectOfType<RaceManager>();
-        if(_rManager == null)
-            Debug.LogWarning("UI MANAGER: RACE manager was NULL");
-
+        
         _gsManager = FindObjectOfType<GameSceneManager>();
         if (_gsManager == null)
             Debug.LogWarning("UI MANAGER: GS Manager was NULL");
@@ -70,12 +65,6 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        float speedVal = (car.carRB.velocity.x + car.carRB.velocity.y) * 1000 * Time.deltaTime;
-
-        speed.text = $"Speed: {(int)(speedVal)}";
-        laps.text = $"Laps: {_rManager.currentLap}/{_rManager.LapAmount}";
-        checkpoints.text = $"Checkpoints: {_rManager.currentCheckpoint}/{_rManager.checkpointAmount}";
-
         if(pauseAction.action.triggered)
         {
             TogglePause();

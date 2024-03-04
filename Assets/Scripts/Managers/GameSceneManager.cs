@@ -3,15 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
-    private RaceManager _rManager;
-
-    private void Start()
-    {
-        _rManager = FindObjectOfType<RaceManager>();
-        if (_rManager == null)
-            Debug.LogWarning("GM MANAGER: RACE Manager was NULL");
-    }
-
     public void RestartScene()
     {
         Time.timeScale = 1;
