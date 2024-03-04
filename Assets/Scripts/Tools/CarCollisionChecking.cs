@@ -14,13 +14,13 @@ public class CarCollisionChecking : MonoBehaviour
         if (_cpManager != null)
             Debug.Log(_cpManager.name);
         else
-            Debug.LogError("CAR COLLISION: CP Manager was NULL");
+            Debug.LogWarning("CAR COLLISION: CP Manager was NULL");
 
         _rManager = FindObjectOfType<RaceManager>();
         if (_rManager != null)
             Debug.Log(_rManager.name);
         else
-            Debug.LogError("CAR COLLISION: RACE Manager was NULL");
+            Debug.LogWarning("CAR COLLISION: RACE Manager was NULL");
     }
 
     private void OnTriggerEnter(Collider _other)
@@ -30,7 +30,14 @@ public class CarCollisionChecking : MonoBehaviour
             _cpManager.savedPosition = _other.transform.position;
             _cpManager.savedRotation = _other.transform.localRotation;
 
+            _other.gameObject.SetActive(false);
             _rManager.currentCheckpoint++;
+
+            if(_rManager.currentCheckpoint > _rManager.checkpointAmount - 1)
+            {
+                for (int i = 0; i < _cpManager.waypointGameObject.Count; i++)
+                    _cpManager.waypointGameObject[i].SetActive(true);
+            }
         }
 
         if (_other.CompareTag("Reset Zone"))

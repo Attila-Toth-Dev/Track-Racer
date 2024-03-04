@@ -13,17 +13,20 @@ public class RaceManager : MonoBehaviour
 
     private CheckpointManager _cpManager;
     private UIManager _uiManager;
-    
-    private void Start()
+
+    private void Awake()
     {
         _cpManager = FindObjectOfType<CheckpointManager>();
         if (_cpManager == null)
             Debug.LogWarning("RACE MANAGER: CP Manager was NULL");
 
         _uiManager = FindObjectOfType<UIManager>();
-        if(_uiManager == null)
+        if (_uiManager == null)
             Debug.LogWarning("RACE MANAGER: UI Manager was NULL");
+    }
 
+    private void Start()
+    {        
         checkpointAmount = _cpManager.waypoints.Count;
 
         currentCheckpoint = 0;
@@ -34,15 +37,13 @@ public class RaceManager : MonoBehaviour
 
     private void Update()
     {
-        // Lap Counting
         if (currentCheckpoint > checkpointAmount)
         {
             currentCheckpoint = 1;
             currentLap++;
         }
 
-        // Toggle Win State
-        if(currentLap > LapAmount)
+        if (currentLap > lapAmount)
             _uiManager.Win();
     }
 }

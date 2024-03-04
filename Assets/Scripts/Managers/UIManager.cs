@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [Header("UI Settings")]
     [SerializeField] private TextMeshProUGUI speed;
     [SerializeField] private TextMeshProUGUI laps;
+    [SerializeField] private TextMeshProUGUI checkpoints;
 
     [Header("UI Objects")]
     [SerializeField] private GameObject pauseMenu;
@@ -75,10 +76,13 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         speed.text = $"Speed: {(int)car._currentSpeed}";
-        laps.text = $"Laps {_rManager.currentLap}/{_rManager.LapAmount}";
-        
+        laps.text = $"Laps: {_rManager.currentLap}/{_rManager.LapAmount}";
+        checkpoints.text = $"Checkpoints: {_rManager.currentCheckpoint}/{_rManager.checkpointAmount}";
+
         if(pauseAction.action.triggered)
+        {
             TogglePause();
+        }
     }
 
     private void UnloadUI()

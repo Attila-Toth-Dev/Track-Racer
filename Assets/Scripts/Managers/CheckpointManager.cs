@@ -2,20 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using Unity.VisualScripting;
 
 public class CheckpointManager : MonoBehaviour
 {
-    [Serializable]
-    public struct Waypoint
-    {
-        [Header("Waypoint Properties")]
-        public string name;
-        public Vector3 colliderSize;
-
-        [Header("Waypoint Positioning")]
-        public Transform transform;
-    }
-
     [Header("Waypoint Manager Settings")]
     [SerializeField] private GameObject prefab;
 
@@ -23,32 +13,29 @@ public class CheckpointManager : MonoBehaviour
     [ReadOnly] public Vector3 savedPosition;
     [ReadOnly] public Quaternion savedRotation;
 
-    [Header("")] public List<Waypoint> waypoints = new List<Waypoint>();
-
-    private readonly List<GameObject> _waypointGO = new List<GameObject>();
-
-    private GameObject _gameObject;
-    private BoxCollider _boxCollider;
+    [Header("")] 
+    public List<Waypoint> waypoints = new List<Waypoint>();
+    [ReadOnly] public List<GameObject> waypointGameObject = new List<GameObject>();
 
     private void Start()
     {
         savedPosition = new Vector3(0, 1, 0);
         savedRotation = new Quaternion(0, 0, 0, 0);
 
-        foreach (Waypoint waypoint in waypoints)
+        GameObject obj;
+        BoxCollider box;
+        foreach (var waypoint in waypoints)
         {
-            _gameObject = Instantiate(prefab, waypoint.transform.position, waypoint.transform.rotation, transform);
-            _gameObject.name = waypoint.name;
+            obj = Instantiate(prefab, waypoint.waypointPositioning.position, waypoint.waypointPositioning.rotation, transform);
+            obj.name = waypoint.name;
+            obj.tag = "Checkpoint";
 
-            _gameObject.tag = "Waypoint";
+            box = obj.AddComponent<BoxCollider>();
+            box.isTrigger = true;
+            box.size = new Vector3(12f, 6f, waypoint.waypointPositioning.localScale.z);
+            box.transform.position = waypoint.waypointPositioning.position;
 
-            _boxCollider = _gameObject.AddComponent<BoxCollider>();
-            _boxCollider.isTrigger = true;
-            _boxCollider.size = waypoint.colliderSize;
-
-            _boxCollider.transform.position = waypoint.transform.position;
-
-            _waypointGO.Add(_gameObject);
+            waypointGameObject.Add(obj);
         }
     }
 
@@ -56,7 +43,7 @@ public class CheckpointManager : MonoBehaviour
     {
         Gizmos.color = Color.blue;
 
-        foreach(GameObject waypoint in _waypointGO)
+        foreach(GameObject waypoint in waypointGameObject)
             Gizmos.DrawWireCube(waypoint.GetComponent<BoxCollider>().bounds.center, waypoint.GetComponent<BoxCollider>().bounds.size);
     }
 }
