@@ -6,19 +6,7 @@ using System;
 using System.Collections.Generic;
 
 public class CarController : MonoBehaviour
-{
-    [Serializable]
-    public struct CarModel
-    {
-        public GameObject carModel;
-        
-        public Transform carFL_Wheel;
-        public Transform carFR_Wheel;
-
-        public Light carFL_Light;
-        public Light carFR_Light;
-    }
-    
+{    
     public float Speed { get; private set; }
 
     public Transform carBody;
@@ -39,7 +27,6 @@ public class CarController : MonoBehaviour
 
     [Header("Car Models")]
     [SerializeField] private List<GameObject> carModels;
-    //[SerializeField] private List<Car> carModels;
     
     [Header("Model Parts")]
     //public Transform FL_Wheel;

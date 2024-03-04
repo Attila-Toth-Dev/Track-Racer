@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-using Unity.VisualScripting;
 
 public class CheckpointManager : MonoBehaviour
 {

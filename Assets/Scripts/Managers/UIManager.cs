@@ -1,12 +1,7 @@
 using NaughtyAttributes;
-
-using System;
-
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -75,7 +70,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        speed.text = $"Speed: {(int)car._currentSpeed}";
+        float speedVal = (car.carRB.velocity.x + car.carRB.velocity.y) * 1000 * Time.deltaTime;
+
+        speed.text = $"Speed: {(int)(speedVal)}";
         laps.text = $"Laps: {_rManager.currentLap}/{_rManager.LapAmount}";
         checkpoints.text = $"Checkpoints: {_rManager.currentCheckpoint}/{_rManager.checkpointAmount}";
 

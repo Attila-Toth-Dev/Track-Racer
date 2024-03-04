@@ -7,6 +7,4 @@ public struct Waypoint
 {
     public string name;
     public Transform waypointPositioning;
-
-    [ReadOnly] public bool canCollide;
 }
