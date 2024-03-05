@@ -3,6 +3,9 @@ using Controllers;
 using Managers.Checkpoint_System;
 
 using NaughtyAttributes;
+
+using System;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -74,12 +77,19 @@ namespace Managers
         
         private void Update()
         {
+            float speedVal = car.carRb.velocity.magnitude;
+            float rounded = (float) (Math.Round(speedVal, 3));
+            
             checkpoints.text = $"Checkpoints: {trackManager.nextCheckpointIndex}/{trackManager.checkpointList.Count}";
-            speed.text = $"Speed: {(int)car.currentSpeed}";
+            speed.text = $"Speed: {rounded * 5}";
             laps.text = $"Laps: {trackManager.currentLap}/{trackManager.lapAmount}";
             
             if(pauseAction.action.triggered)
                 TogglePause();
+        }
+
+        private void FixedUpdate()
+        {
         }
 
         private void UnloadUI()
