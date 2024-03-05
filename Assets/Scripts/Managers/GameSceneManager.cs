@@ -1,19 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameSceneManager : MonoBehaviour
+namespace Managers
 {
-    public void RestartScene()
+    public class GameSceneManager : MonoBehaviour
     {
-        Time.timeScale = 1;
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-    }
+        public void RestartScene()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        }
 
-    public void ChangeScene(string _sceneName)
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadSceneAsync(_sceneName);
-    }
+        public void ChangeScene(string _sceneName)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadSceneAsync(_sceneName);
+        }
 
-    public void QuitGame() => Application.Quit();
+        public void QuitGame() => Application.Quit();
+    }
 }
+

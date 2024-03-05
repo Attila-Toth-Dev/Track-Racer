@@ -3,64 +3,72 @@ using System;
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class TrackManager : MonoBehaviour
+namespace Managers.Checkpoint_System
 {
-    public event EventHandler onPlayerCorrectCheckpoint;
-    public event EventHandler onPlayerWrongCheckpoint;
-    
-    [Header("Checkpoint List")]
-    [ReadOnly] public List<Checkpoint> checkpointList;
-
-    [Header("Track Settings")]
-    public int lapAmount;
-    
-    [Header("Tracker")]
-    [ReadOnly] public int nextCheckpointIndex;
-    [ReadOnly] public int currentLap;
-
-    private Vector3 savedPosition;
-    private Quaternion savedRotation;
-
-    private void Awake()
+    public class TrackManager : MonoBehaviour
     {
-        Transform checkpointTransform = transform;
-
-        checkpointList = new List<Checkpoint>();
-        foreach(Transform checkpoint in checkpointTransform)
-        {
-            Checkpoint checkpointSingle = checkpoint.GetComponent<Checkpoint>();
-            checkpointSingle.SetTrackCheckpoints(this);
-            
-            checkpointList.Add(checkpointSingle);
-            
-            checkpointSingle.Hide();
-        }
+        public event EventHandler onPlayerCorrectCheckpoint;
+        public event EventHandler onPlayerWrongCheckpoint;
         
-        nextCheckpointIndex = 0;
-    }
+        [Header("Checkpoint List")]
+        [ReadOnly] public List<Checkpoint> checkpointList;
 
-    public void PlayerThroughCheckpoint(Checkpoint _checkpoint)
-    {
-        if(checkpointList.IndexOf(_checkpoint) == nextCheckpointIndex)
+        [Header("Track Settings")]
+        public int lapAmount;
+        
+        [Header("Tracker")]
+        [ReadOnly] public int nextCheckpointIndex;
+        [ReadOnly] public int currentLap;
+        
+        [SerializeField, ReadOnly] private Vector3 savedPosition;
+        [SerializeField, ReadOnly] private Quaternion savedRotation;
+
+        private void Awake()
         {
-            // Correct Checkpoint
-            Debug.Log("Correct");
-            Checkpoint correctCheckpoint = checkpointList[nextCheckpointIndex];
-            correctCheckpoint.Hide();
+            Transform checkpointTransform = transform;
+
+            checkpointList = new List<Checkpoint>();
+            foreach(Transform checkpoint in checkpointTransform)
+            {
+                Checkpoint checkpointSingle = checkpoint.GetComponent<Checkpoint>();
+                checkpointSingle.SetTrackCheckpoints(this);
+                
+                checkpointList.Add(checkpointSingle);
+                
+                checkpointSingle.Hide();
+            }
             
-            nextCheckpointIndex = (nextCheckpointIndex + 1) % checkpointList.Count;
-            onPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+            nextCheckpointIndex = 0;
         }
-        else
-        {
-            // Wrong Checkpoint
-            Debug.Log("Wrong");
-            onPlayerWrongCheckpoint?.Invoke(this, EventArgs.Empty);
 
-            Checkpoint correctCheckpoint = checkpointList[nextCheckpointIndex];
-            correctCheckpoint.Show();
+        public void PlayerThroughCheckpoint(Checkpoint _checkpoint)
+        {
+            if(checkpointList.IndexOf(_checkpoint) == nextCheckpointIndex)
+            {
+                // Correct Checkpoint
+                Debug.Log("Correct");
+                Checkpoint correctCheckpoint = checkpointList[nextCheckpointIndex];
+                correctCheckpoint.Hide();
+                
+                nextCheckpointIndex = (nextCheckpointIndex + 1) % checkpointList.Count;
+                onPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                // Wrong Checkpoint
+                Debug.Log("Wrong");
+                onPlayerWrongCheckpoint?.Invoke(this, EventArgs.Empty);
+
+                Checkpoint correctCheckpoint = checkpointList[nextCheckpointIndex];
+                correctCheckpoint.Show();
+            }
+        }
+
+        public void SaveTransform(Vector3 _position, Quaternion _rotation)
+        {
+            savedPosition = _position;
+            savedRotation = _rotation;
         }
     }
 }

@@ -1,39 +1,49 @@
+using Controllers;
+
+using Managers;
+using Managers.Checkpoint_System;
+
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour
+namespace Managers.Checkpoint_System
 {
-	private TrackManager trackCheckpoints;
-	[SerializeField] private MeshRenderer meshRenderer;
-
-	private UIManager uiManager;
-	
-	private void Start()
+	public class Checkpoint : MonoBehaviour
 	{
-		Hide();
+		private TrackManager trackManager;
+		[SerializeField] private MeshRenderer meshRenderer;
 
-		uiManager = FindObjectOfType<UIManager>();
-	}
+		private UIManager uiManager;
 
-	private void OnTriggerEnter(Collider _other)
-	{
-		if(_other.TryGetComponent<CarCollisionChecking>(out CarCollisionChecking car))
+		private void Awake()
 		{
-			trackCheckpoints.PlayerThroughCheckpoint(this);
+			uiManager = FindObjectOfType<UIManager>();
+			if(uiManager == null)
+				Debug.LogWarning("CHECKPOINT: UI Manager is NULL");
+		}
 
-			if(trackCheckpoints.nextCheckpointIndex == 1)
-				trackCheckpoints.currentLap++;
-
-			if(trackCheckpoints.currentLap > trackCheckpoints.lapAmount)
+		private void OnTriggerEnter(Collider _other)
+		{
+			if(_other.TryGetComponent<CarCollisionChecking>(out CarCollisionChecking car))
 			{
-				trackCheckpoints.currentLap = trackCheckpoints.lapAmount;	
-				uiManager.Win();
+				trackManager.PlayerThroughCheckpoint(this);
+
+				if(trackManager.nextCheckpointIndex == 1)
+					trackManager.currentLap++;
+
+				if(trackManager.currentLap > trackManager.lapAmount)
+				{
+					trackManager.currentLap = trackManager.lapAmount;	
+					uiManager.Win();
+				}
+				
+				trackManager.SaveTransform(_other.transform.position, _other.transform.localRotation);
 			}
 		}
+
+		public void SetTrackCheckpoints(TrackManager _trackCheckpoints) => this.trackManager = _trackCheckpoints;
+
+		public void Show() => meshRenderer.enabled = true;
+
+		public void Hide() => meshRenderer.enabled = false;
 	}
-
-	public void SetTrackCheckpoints(TrackManager _trackCheckpoints) => this.trackCheckpoints = _trackCheckpoints;
-
-	public void Show() => meshRenderer.enabled = true;
-
-	public void Hide() => meshRenderer.enabled = false;
 }

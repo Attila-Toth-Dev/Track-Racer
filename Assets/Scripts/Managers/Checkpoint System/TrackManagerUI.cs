@@ -1,16 +1,19 @@
-﻿using System;
-
-using UnityEditor.Search;
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Managers.Checkpoint_System
 {
 	public class TrackManagerUI : MonoBehaviour
 	{
-		[SerializeField] private TrackManager trackManager;
+		private TrackManager trackManager;
 		
-		private void Start()
+	    private void Awake()
+	    {
+	        trackManager = FindObjectOfType<TrackManager>();
+	        if(trackManager == null)
+		        Debug.LogWarning("TRACK MANAGER UI: Track Manager is NULL");
+	    }
+
+	    private void Start()
 		{
 			trackManager.onPlayerCorrectCheckpoint += TrackManager_OnPlayerCorrectCheckpoint;
 			trackManager.onPlayerWrongCheckpoint += TrackManager_OnPlayerWrongCheckpoint;

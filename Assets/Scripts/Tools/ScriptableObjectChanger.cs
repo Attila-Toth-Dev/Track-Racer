@@ -1,32 +1,32 @@
-using System;
-
-using TMPro;
-
-using Tools.Cars;
+using Tools.Track;
 
 using UnityEngine;
 
-public class ScriptableObjectChanger : MonoBehaviour
+namespace Tools
 {
-    [Header("Scriptable Objects")]
-    [SerializeField] private ScriptableObject[] scriptableObjects;
-    
-    [Header("Display Objects")]
-    [SerializeField] private TrackDisplay trackDisplay;
-
-    private int currentIndex;
-
-    private void Awake()
+    public class ScriptableObjectChanger : MonoBehaviour
     {
-        ChangeScriptableObject(0);
-    }
-
-    public void ChangeScriptableObject(int _change)
-    {
-        currentIndex += _change;
-        if(currentIndex < 0) currentIndex = scriptableObjects.Length - 1;
-        else if(currentIndex > scriptableObjects.Length - 1) currentIndex = 0;
+        [Header("Scriptable Objects")]
+        [SerializeField] private ScriptableObject[] scriptableObjects;
         
-        if(trackDisplay != null) trackDisplay.DisplayTrack((Track)scriptableObjects[currentIndex]);
+        [Header("Display Objects")]
+        [SerializeField] private TrackDisplay trackDisplay;
+
+        private int currentIndex;
+
+        private void Awake()
+        {
+            ChangeScriptableObject(0);
+        }
+
+        public void ChangeScriptableObject(int _change)
+        {
+            currentIndex += _change;
+            if(currentIndex < 0) currentIndex = scriptableObjects.Length - 1;
+            else if(currentIndex > scriptableObjects.Length - 1) currentIndex = 0;
+            
+            if(trackDisplay != null) trackDisplay.DisplayTrack((Track.Track)scriptableObjects[currentIndex]);
+        }
     }
 }
+

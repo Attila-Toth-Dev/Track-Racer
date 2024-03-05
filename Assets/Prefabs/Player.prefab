@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carBody: {fileID: 0}
   carNormal: {fileID: 9138920644699564456}
-  carRB: {fileID: 6516681499352385359}
+  carRb: {fileID: 6516681499352385359}
   topSpeed: 150
   accelerationAmount: 5
   brakeAmount: 7
@@ -210,24 +210,13 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 243
-  carModels:
-  - {fileID: 8513158509745883041, guid: a18414ce539243543864b88dab1c0c71, type: 3}
-  - {fileID: 5829873484091434563, guid: 0f799ee534c97d84eab1d5b5ffd0c1d3, type: 3}
-  - {fileID: 5511315417414314575, guid: 80b96f4d5f80b754092735ddbfdbbfda, type: 3}
-  - {fileID: 5022759499550254691, guid: 2044d3618df3f78449be3acdc409a1b2, type: 3}
-  - {fileID: 4957579473506433247, guid: 2e5719020eb5c074ebf114ba3b28e113, type: 3}
-  - {fileID: 2011798153915752031, guid: c9ed3cac665f80a45b47f27a856e5731, type: 3}
-  - {fileID: 3232302729160097213, guid: 6e373149304fe70429b6f93bdeab2601, type: 3}
-  - {fileID: 3100390579578487087, guid: d16f7a40aa86eb04c8e171f3d9dd3eab, type: 3}
-  - {fileID: 8463950224689249519, guid: 90da3aa743a5ec641808a3f7127a0ec1, type: 3}
   moveAction: {fileID: -7652315520478862766, guid: 1ff44195e3514e143b7d6a4faf81fbd9, type: 3}
   steerAction: {fileID: 4203286702312302125, guid: 1ff44195e3514e143b7d6a4faf81fbd9, type: 3}
-  _rayLength: 0.6
-  _move: 0
-  _steer: 0
-  _isGrounded: 0
-  _isDay: 0
-  _currentSpeed: 0
+  rayLength: 1
+  move: 0
+  steer: 0
+  isGrounded: 0
+  currentSpeed: 0
 --- !u!65 &3484190112008098246
 BoxCollider:
   m_ObjectHideFlags: 0

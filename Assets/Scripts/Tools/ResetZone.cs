@@ -1,21 +1,24 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
-public class ResetZone : MonoBehaviour
+namespace Tools
 {
-	private new BoxCollider collider;
-		
-	private void Start()
+	[RequireComponent(typeof(BoxCollider))]
+	public class ResetZone : MonoBehaviour
 	{
-		gameObject.tag = $"Reset Zone";
-		
-		collider = GetComponent<BoxCollider>();
-		collider.isTrigger = true;
-	}
+		private new BoxCollider collider;
+			
+		private void Start()
+		{
+			gameObject.tag = "Reset Zone";
+			
+			collider = GetComponent<BoxCollider>();
+			collider.isTrigger = true;
+		}
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.color = Color.HSVToRGB(0, 62, 88);
-		Gizmos.DrawWireCube(GetComponent<BoxCollider>().bounds.center, GetComponent<BoxCollider>().size);
+		private void OnDrawGizmos()
+		{
+			Gizmos.color = Color.HSVToRGB(0, 62, 88);
+			Gizmos.DrawWireCube(GetComponent<BoxCollider>().bounds.center, GetComponent<BoxCollider>().size);
+		}
 	}
 }
