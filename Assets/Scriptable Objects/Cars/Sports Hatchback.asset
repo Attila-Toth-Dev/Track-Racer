@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sports Hatchback
   m_EditorClassIdentifier: 
   carName: Sports Hatchback
-  carDescription: Wait... Was that a laptop in the front seat!!!
-  speed: 110
-  acceleration: 5
+  carDescription: Wait a second... Is that, A LAPTOP IN THE FRONT SEAT!?!?!?
+  speed: 140
+  acceleration: 6
   handling: 30
   carIndex: 0
   carModel: {fileID: 2011798153915752031, guid: c9ed3cac665f80a45b47f27a856e5731, type: 3}

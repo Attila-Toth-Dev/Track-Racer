@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Heavy Ute
   m_EditorClassIdentifier: 
   carName: Heavy Ute
-  carDescription: Did someone say strong bed!
-  speed: 100
+  carDescription: This thing is so heavy, even the petrol station pump starts sweating!!
+  speed: 120
   acceleration: 4
   handling: 20
   carIndex: 0

@@ -10,7 +10,6 @@ namespace Tools.Track
         public string trackDescription;
         
         [Header("Track Customisations")]
-        public Color trackColour;
         public Sprite trackImage;
         
         public Object sceneToLoad;

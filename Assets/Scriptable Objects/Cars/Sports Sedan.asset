@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sports Sedan
   m_EditorClassIdentifier: 
   carName: Sports Sedan
-  carDescription: A sporty model that can actually go the speed limit.
-  speed: 120
+  carDescription: Finally, a ride that can actually go the speed limit!!
+  speed: 140
   acceleration: 5
   handling: 30
   carIndex: 0

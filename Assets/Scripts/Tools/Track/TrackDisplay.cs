@@ -19,7 +19,6 @@ namespace Tools.Track
         public void DisplayTrack(Track _track)
         {
             trackName.text = _track.trackName;
-            trackName.color = _track.trackColour;
             
             trackDesc.text = _track.trackDescription;
             

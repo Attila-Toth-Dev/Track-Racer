@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6171b2be80367b64a9a675ef6803582c, type: 3}
   m_Name: Tractor
   m_EditorClassIdentifier: 
-  carName: Tractor (Special)
-  carDescription: Wait, why is this on race track?!!
+  carName: Tractor
+  carDescription: Who knew farming could be this fast!!
   speed: 170
   acceleration: 5
   handling: 30

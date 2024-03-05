@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Fire Truck
   m_EditorClassIdentifier: 
   carName: Fire Truck
-  carDescription: Why's it racing, it should be saving cats!
-  speed: 110
+  carDescription: Wait... WHY'S THIS RACING, MY CAT'S STUCK IN A TREE RIGHT NOW!!!
+  speed: 120
   acceleration: 4
   handling: 20
   carIndex: 0

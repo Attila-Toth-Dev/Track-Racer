@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Delivery Truck
   m_EditorClassIdentifier: 
   carName: Flatbed Delivery Truck
-  carDescription: Can't race for it's life but can carry a town.
-  speed: 100
+  carDescription: Can't race for it's life, but can tow a whole town.
+  speed: 120
   acceleration: 4
   handling: 20
   carIndex: 0

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Sedan
   m_EditorClassIdentifier: 
   carName: Sedan
-  carDescription: Your standard grocery getter.
-  speed: 90
+  carDescription: This thing has never been over the speed limit ever, and like,
+    I mean EVER.
+  speed: 130
   acceleration: 4
   handling: 25
   carIndex: 0

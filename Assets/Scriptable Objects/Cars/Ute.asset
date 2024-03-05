@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Ute
   m_EditorClassIdentifier: 
   carName: Ute
-  carDescription: Can't go in a straight line but loves donuts.
-  speed: 100
-  acceleration: 4
-  handling: 35
+  carDescription: Yeah Mate, I swear I've never flogged the thing, it's only ever
+    been a weekender, I swear!
+  speed: 140
+  acceleration: 5
+  handling: 30
   carIndex: 0
   carModel: {fileID: 8463950224689249519, guid: 90da3aa743a5ec641808a3f7127a0ec1, type: 3}
