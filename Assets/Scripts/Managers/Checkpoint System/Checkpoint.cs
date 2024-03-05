@@ -1,8 +1,5 @@
 using Controllers;
 
-using Managers;
-using Managers.Checkpoint_System;
-
 using UnityEngine;
 
 namespace Managers.Checkpoint_System

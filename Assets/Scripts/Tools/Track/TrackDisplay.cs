@@ -31,7 +31,7 @@ namespace Tools.Track
             PlayerPrefs.SetString("Track", _track.sceneToLoad.name);
             
             playButton.onClick.RemoveAllListeners();
-            playButton.onClick.AddListener(()=>SceneManager.LoadScene("Car Menu"));
+            playButton.onClick.AddListener(()=>SceneManager.LoadScene("Race Settings Menu"));
         }
     }
 }

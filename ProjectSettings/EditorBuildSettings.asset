@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Production/Track Menu.unity
     guid: 69ee82ff773492f43b590230fa1f29bd
   - enabled: 1
+    path: Assets/Scenes/Production/Race Settings Menu.unity
+    guid: b5b4c678b747eaf4b8b6e17704a712ad
+  - enabled: 1
     path: Assets/Scenes/Production/Car Menu.unity
     guid: 36089f326c9934742ba4eb99686aa1f0
   - enabled: 1

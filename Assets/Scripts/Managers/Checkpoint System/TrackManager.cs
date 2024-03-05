@@ -2,6 +2,8 @@ using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
 
+using Tools;
+
 using UnityEngine;
 
 namespace Managers.Checkpoint_System
@@ -16,6 +18,7 @@ namespace Managers.Checkpoint_System
 
         [Header("Track Settings")]
         public int lapAmount;
+        [ReadOnly] public bool freeMode;
         
         [Header("Tracker")]
         [ReadOnly] public int nextCheckpointIndex;
@@ -24,8 +27,25 @@ namespace Managers.Checkpoint_System
         [SerializeField, ReadOnly] private Vector3 savedPosition;
         [SerializeField, ReadOnly] private Quaternion savedRotation;
 
+        private RaceSettings settings;
+
         private void Awake()
         {
+            int gameMode = PlayerPrefs.GetInt("Mode");
+
+            switch(gameMode)
+            {
+                case 1:
+                    freeMode = false;
+                    lapAmount = 3;
+                    break;
+                
+                case -1:
+                    freeMode = true;
+                    lapAmount = 99;
+                    break;
+            }
+            
             Transform checkpointTransform = transform;
 
             checkpointList = new List<Checkpoint>();
@@ -47,7 +67,6 @@ namespace Managers.Checkpoint_System
             if(checkpointList.IndexOf(_checkpoint) == nextCheckpointIndex)
             {
                 // Correct Checkpoint
-                Debug.Log("Correct");
                 Checkpoint correctCheckpoint = checkpointList[nextCheckpointIndex];
                 correctCheckpoint.Hide();
                 

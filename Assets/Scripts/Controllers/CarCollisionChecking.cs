@@ -20,7 +20,7 @@ namespace Controllers
         private void OnTriggerEnter(Collider _other)
         {
             HumanController hc = _other.gameObject.GetComponent<HumanController>();
-            if (hc != null)
+            if (hc != null && hc.isHittable)
             {
                 CapsuleCollider cc = hc.gameObject.GetComponent<CapsuleCollider>();
 

@@ -5,6 +5,7 @@ namespace Controllers
 {
     public class HumanController : MonoBehaviour
     {
+        public bool isHittable;
         public List<Rigidbody> rigidBodies;
 
         private Animator animator;
@@ -23,8 +24,9 @@ namespace Controllers
         private void Start()
         {
             animator = GetComponent<Animator>();
-            foreach (Rigidbody r in rigidBodies)
-                r.isKinematic = true;
+            if(isHittable)
+                foreach (Rigidbody r in rigidBodies)
+                    r.isKinematic = true;
 
             gameObject.tag = "Human";
         }

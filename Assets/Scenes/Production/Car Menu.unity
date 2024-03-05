@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 40868981}
   - component: {fileID: 40868980}
   m_Layer: 5
-  m_Name: Next
+  m_Name: NEXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +586,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PREVIOUS
+  m_text: 'PREV
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -613,8 +615,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -713,7 +715,6 @@ MonoBehaviour:
   carSpeed: {fileID: 1974793070}
   carAccel: {fileID: 808112198}
   carHandling: {fileID: 1615674345}
-  gsManager: {fileID: 883972528}
   cars:
   - {fileID: 11400000, guid: bf15428746553094196594ff96489cfe, type: 2}
   - {fileID: 11400000, guid: 49ed01c5512320c4db2a5f2c86960533, type: 2}
@@ -732,7 +733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328066144}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -898,7 +899,7 @@ GameObject:
   - component: {fileID: 413083932}
   - component: {fileID: 413083931}
   m_Layer: 5
-  m_Name: Back
+  m_Name: BACK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -978,7 +979,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Track Menu
+          m_StringArgument: Race Settings Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &413083932
@@ -1104,8 +1105,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1534,8 +1535,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1996,7 +1997,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &883972527
 RectTransform:
@@ -2124,7 +2125,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008399017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2132,14 +2133,14 @@ RectTransform:
   - {fileID: 1974793069}
   - {fileID: 808112197}
   - {fileID: 1615674344}
-  m_Father: {fileID: 1232368202}
-  m_RootOrder: 2
+  m_Father: {fileID: 1179402208}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -100, y: 100}
   m_SizeDelta: {x: 330.5033, y: 313.4602}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1008399020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2276,6 +2277,7 @@ RectTransform:
   - {fileID: 2098662916}
   - {fileID: 40868979}
   - {fileID: 413083930}
+  - {fileID: 1008399018}
   m_Father: {fileID: 1222776250}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2394,7 +2396,6 @@ RectTransform:
   m_Children:
   - {fileID: 617891195}
   - {fileID: 331870671}
-  - {fileID: 1008399018}
   m_Father: {fileID: 1222776250}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2803,7 +2804,7 @@ GameObject:
   - component: {fileID: 1904460214}
   - component: {fileID: 1904460213}
   m_Layer: 5
-  m_Name: Previous
+  m_Name: PREV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3122,7 +3123,7 @@ GameObject:
   - component: {fileID: 2098662918}
   - component: {fileID: 2098662917}
   m_Layer: 5
-  m_Name: Play
+  m_Name: PLAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
