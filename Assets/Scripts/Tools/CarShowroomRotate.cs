@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Tools.Cars
+namespace Tools
 {
 	public class CarShowroomRotate : MonoBehaviour
 	{

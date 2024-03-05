@@ -1,5 +1,3 @@
-using Controllers;
-
 using Managers.Checkpoint_System;
 
 using UnityEngine;
@@ -8,12 +6,12 @@ namespace Controllers
 {
     public class CarCollisionChecking : MonoBehaviour
     {
-        private TrackManager trackManager;
+        private CheckpointManager checkpointManager;
 
         private void Awake()
         {
-            trackManager = FindObjectOfType<TrackManager>();
-            if(trackManager == null)
+            checkpointManager = FindObjectOfType<CheckpointManager>();
+            if(checkpointManager == null)
                 Debug.LogWarning("CAR COLLISION CHECKING: Track Manager is NULL");
         }
 

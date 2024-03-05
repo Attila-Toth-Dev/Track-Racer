@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tools.Track
+namespace Tools.Scriptable_Objects
 {
     [CreateAssetMenu (fileName ="New Track", menuName = "Scriptable Objects/Track")]
     public class Track : ScriptableObject

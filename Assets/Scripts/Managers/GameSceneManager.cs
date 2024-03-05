@@ -17,7 +17,11 @@ namespace Managers
             SceneManager.LoadSceneAsync(_sceneName);
         }
 
-        public void QuitGame() => Application.Quit();
+        public void QuitGame()
+        {
+            PlayerPrefs.DeleteAll();
+            Application.Quit();
+        }
     }
 }
 

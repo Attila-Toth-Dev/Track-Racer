@@ -1,15 +1,15 @@
-using Managers;
-
 using System.Collections.Generic;
 
 using TMPro;
 
+using Tools.Scriptable_Objects;
+
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Tools.Cars
+namespace Managers
 {
-	public class CarSelection : MonoBehaviour
+	public class CarManager : MonoBehaviour
 	{
 		[SerializeField] private Button nextButton;
 		[SerializeField] private Button prevButton;

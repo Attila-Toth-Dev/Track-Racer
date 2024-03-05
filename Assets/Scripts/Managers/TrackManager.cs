@@ -1,12 +1,15 @@
+
 using TMPro;
+
+using Tools.Scriptable_Objects;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Tools.Track
+namespace Managers
 {
-    public class TrackDisplay : MonoBehaviour
+    public class TrackManager : MonoBehaviour
     {
         [Header("Track Display Objects")]
         [SerializeField] private TextMeshProUGUI trackName;
@@ -15,7 +18,22 @@ namespace Tools.Track
         [SerializeField] private Image backgroundTrackImage;
 
         [SerializeField] private Button playButton;
+
+        private void Awake()
+        {
+            GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+        }
         
+        private void GameManagerOnGameStateChanged(GameState _state)
+        {
+            
+        }
+
         public void DisplayTrack(Track _track)
         {
             trackName.text = _track.trackName;

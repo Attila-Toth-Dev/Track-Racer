@@ -2,7 +2,7 @@ using System;
 
 using UnityEngine;
 
-namespace Tools.Cars
+namespace Tools.Scriptable_Objects
 {
 	[CreateAssetMenu(fileName = "New Car", menuName = "Scriptable Objects/Car"), Serializable]
 	public class Car : ScriptableObject

@@ -1,4 +1,6 @@
-using Tools.Track;
+using Managers;
+
+using Tools.Scriptable_Objects;
 
 using UnityEngine;
 
@@ -10,7 +12,7 @@ namespace Tools
         [SerializeField] private ScriptableObject[] scriptableObjects;
         
         [Header("Display Objects")]
-        [SerializeField] private TrackDisplay trackDisplay;
+        [SerializeField] private TrackManager trackManager;
 
         private int currentIndex;
 
@@ -25,7 +27,7 @@ namespace Tools
             if(currentIndex < 0) currentIndex = scriptableObjects.Length - 1;
             else if(currentIndex > scriptableObjects.Length - 1) currentIndex = 0;
             
-            if(trackDisplay != null) trackDisplay.DisplayTrack((Track.Track)scriptableObjects[currentIndex]);
+            if(trackManager != null) trackManager.DisplayTrack((Track)scriptableObjects[currentIndex]);
         }
     }
 }

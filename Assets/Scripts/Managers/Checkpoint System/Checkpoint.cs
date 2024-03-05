@@ -6,7 +6,7 @@ namespace Managers.Checkpoint_System
 {
 	public class Checkpoint : MonoBehaviour
 	{
-		private TrackManager trackManager;
+		private CheckpointManager checkpointManager;
 		[SerializeField] private MeshRenderer meshRenderer;
 
 		private UIManager uiManager;
@@ -22,22 +22,22 @@ namespace Managers.Checkpoint_System
 		{
 			if(_other.TryGetComponent<CarCollisionChecking>(out CarCollisionChecking car))
 			{
-				trackManager.PlayerThroughCheckpoint(this);
+				checkpointManager.PlayerThroughCheckpoint(this);
 
-				if(trackManager.nextCheckpointIndex == 1)
-					trackManager.currentLap++;
+				if(checkpointManager.nextCheckpointIndex == 1)
+					checkpointManager.currentLap++;
 
-				if(trackManager.currentLap > trackManager.lapAmount)
+				if(checkpointManager.currentLap > checkpointManager.lapAmount)
 				{
-					trackManager.currentLap = trackManager.lapAmount;	
+					checkpointManager.currentLap = checkpointManager.lapAmount;	
 					uiManager.Win();
 				}
 				
-				trackManager.SaveTransform(_other.transform.position, _other.transform.localRotation);
+				checkpointManager.SaveTransform(_other.transform.position, _other.transform.localRotation);
 			}
 		}
 
-		public void SetTrackCheckpoints(TrackManager _trackCheckpoints) => this.trackManager = _trackCheckpoints;
+		public void SetTrackCheckpoints(CheckpointManager checkpointCheckpoints) => this.checkpointManager = checkpointCheckpoints;
 
 		public void Show() => meshRenderer.enabled = true;
 

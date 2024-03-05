@@ -2,13 +2,11 @@ using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
 
-using Tools;
-
 using UnityEngine;
 
 namespace Managers.Checkpoint_System
 {
-    public class TrackManager : MonoBehaviour
+    public class CheckpointManager : MonoBehaviour
     {
         public event EventHandler onPlayerCorrectCheckpoint;
         public event EventHandler onPlayerWrongCheckpoint;
@@ -17,8 +15,7 @@ namespace Managers.Checkpoint_System
         [ReadOnly] public List<Checkpoint> checkpointList;
 
         [Header("Track Settings")]
-        public int lapAmount;
-        [ReadOnly] public bool freeMode;
+        [ReadOnly] public int lapAmount;
         
         [Header("Tracker")]
         [ReadOnly] public int nextCheckpointIndex;
@@ -27,25 +24,8 @@ namespace Managers.Checkpoint_System
         [SerializeField, ReadOnly] private Vector3 savedPosition;
         [SerializeField, ReadOnly] private Quaternion savedRotation;
 
-        private RaceSettings settings;
-
         private void Awake()
         {
-            int gameMode = PlayerPrefs.GetInt("Mode");
-
-            switch(gameMode)
-            {
-                case 1:
-                    freeMode = false;
-                    lapAmount = 3;
-                    break;
-                
-                case -1:
-                    freeMode = true;
-                    lapAmount = 99;
-                    break;
-            }
-            
             Transform checkpointTransform = transform;
 
             checkpointList = new List<Checkpoint>();
@@ -60,6 +40,11 @@ namespace Managers.Checkpoint_System
             }
             
             nextCheckpointIndex = 0;
+        }
+
+        private void Start()
+        {
+            lapAmount = PlayerPrefs.GetInt("Laps");
         }
 
         public void PlayerThroughCheckpoint(Checkpoint _checkpoint)

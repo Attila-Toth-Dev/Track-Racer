@@ -30,7 +30,7 @@ namespace Managers
         [SerializeField, ReadOnly] private bool isPaused;
 
         private GameSceneManager gsManager;
-        private TrackManager trackManager;
+        private CheckpointManager checkpointManager;
 
         private void Start()
         {
@@ -40,8 +40,8 @@ namespace Managers
             if (gsManager == null)
                 Debug.LogWarning("UI MANAGER: GS Manager was NULL");
 
-            trackManager = FindObjectOfType<TrackManager>();
-            if (trackManager == null)
+            checkpointManager = FindObjectOfType<CheckpointManager>();
+            if (checkpointManager == null)
                 Debug.LogWarning("UI MANAGER: Track Manager was NULL");
         }
 
@@ -80,18 +80,14 @@ namespace Managers
             float speedVal = car.carRb.velocity.magnitude;
             float rounded = (float) (Math.Round(speedVal, 3));
             
-            checkpoints.text = $"Checkpoints: {trackManager.nextCheckpointIndex}/{trackManager.checkpointList.Count}";
+            checkpoints.text = $"Checkpoints: {checkpointManager.nextCheckpointIndex}/{checkpointManager.checkpointList.Count}";
             speed.text = $"Speed: {rounded * 5}";
-            laps.text = $"Laps: {trackManager.currentLap}/{trackManager.lapAmount}";
+            laps.text = $"Laps: {checkpointManager.currentLap}/{checkpointManager.lapAmount}";
             
             if(pauseAction.action.triggered)
                 TogglePause();
         }
-
-        private void FixedUpdate()
-        {
-        }
-
+        
         private void UnloadUI()
         {
             pauseMenu.SetActive(false);
