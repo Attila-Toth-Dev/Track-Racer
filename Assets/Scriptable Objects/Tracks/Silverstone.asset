@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dc2fdc1055f9447b40730e6faf0a2c, type: 3}
   m_Name: Silverstone
   m_EditorClassIdentifier: 
-  trackIndex: 1
   trackName: Silverstone Speedway
-  trackDescription: A track filled with corners and long straights.
-  trackColour: {r: 1, g: 1, b: 1, a: 1}
+  trackDescription: 'Silverstone Speedway: where history flies faster than the cars!'
   trackImage: {fileID: 21300000, guid: 3d8b1917aaa7b45439a14e1df557483a, type: 3}
   sceneToLoad: {fileID: 102900000, guid: e4d14e68fbf677340809e1df08b7ccd0, type: 3}
