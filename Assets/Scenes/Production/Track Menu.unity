@@ -1281,6 +1281,7 @@ MonoBehaviour:
   scriptableObjects:
   - {fileID: 11400000, guid: 2f09b829266825d42bb644064e08a530, type: 2}
   - {fileID: 11400000, guid: b256d062c3b9d7543b7121c92927949e, type: 2}
+  - {fileID: 11400000, guid: 97e9f4eeee38af9409184d5ceec09420, type: 2}
   trackManager: {fileID: 1623850800}
 --- !u!114 &804383228
 MonoBehaviour:
