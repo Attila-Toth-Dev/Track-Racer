@@ -39,7 +39,7 @@ namespace Tools
             raceModeToggle.interactable = true;
             raceModeToggle.isOn = true;
 
-            lapSlider.interactable = false;
+            //lapSlider.interactable = false;
         }
 
         private void Update() => lapSliderText.text = $"LAP AMOUNT: {lapAmount}";
