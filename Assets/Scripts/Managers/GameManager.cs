@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
             case GameState.CarSelection:
                 break;
             
+            case GameState.RaceScene:
+                break;
+            
             default:
                 throw new ArgumentOutOfRangeException(nameof(_newState), _newState, null);
         }
@@ -50,4 +53,5 @@ public enum GameState
     TrackSelection,
     RaceSettings,
     CarSelection,
+    RaceScene
 }

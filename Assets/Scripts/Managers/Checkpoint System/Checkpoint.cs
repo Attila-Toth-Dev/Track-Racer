@@ -6,9 +6,9 @@ namespace Managers.Checkpoint_System
 {
 	public class Checkpoint : MonoBehaviour
 	{
-		private CheckpointManager checkpointManager;
 		[SerializeField] private MeshRenderer meshRenderer;
-
+		
+		private CheckpointManager checkpointManager;
 		private UIManager uiManager;
 
 		private void Awake()
